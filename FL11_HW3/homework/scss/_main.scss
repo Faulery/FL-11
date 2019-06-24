@@ -7,105 +7,95 @@
     width: 50%;
     justify-content: space-between;
     margin: 10% 0 0 25%;
-    z-index: 2;
 }
 @mixin underline {
   content: '';
   display: block;
-  height: 25px;
   background: $underline-color;
   z-index: -1;
-  position: relative;
+  position: absolute;
 }
-
+$map: (
+  color: #c3c4c1
+);
 body {
   background-color: $background-color;
+  font-family: $font;
+  line-height: 1;
 }
-
-p {
-  color: $text-color;
-}
-
 .header {
   height: 600px;
   width: 100%;
   background: $header-image no-repeat center center;
-  border-bottom-right-radius: 40%;
+  border-bottom-right-radius: 35%;
+  color: $text-color;
   position: relative;
   z-index: 1;
-
   &-wrap {
     padding: 2% 0 15% 10%;
     float: left;
     width: 50%;
-
     .landing-logo {
       float: left;
       display: block;
-
       p {
         float: right;
         margin: 5px 10px;
-        font-weight: bold;
-        width: 65px;
+        font-weight: 600;
+        width: 63px;
         letter-spacing: 2px;
-        word-wrap: break-word;
-
         span {
           letter-spacing: normal;
-          font-size: 12px;
+          font-size: 8px;
+          display: inline-block;
+          padding-left: 6px;
         }
       }
     }
-
-    p.header_heading {
-      margin-top: 100px;
-      font-weight: bold;
-      font-size: 54px;
-      max-width: 500px;
-    }
-
-    p.header_heading::after {
+  }
+  &_heading {
+    margin-top: 100px;
+    font-weight: 600;
+    font-size: 54px;
+    max-width: 500px;
+    &::before {
       @include underline;
-      width: 42%;
-      bottom: 27px;
-    }
-
-    p.header_text {
-      max-width: 500px;
+      height: 25px;
+      width: 17%;
+      top: 34%;
     }
   }
+  &_text {
+    max-width: 500px;
+  }
+  &_button {
+    margin-top: 35px;
+    border: 0 solid transparent;
+    border-radius: 2px;
+    background-color: $button-color;
+    padding: 12px 35px;
+    color: #fff;
+  }
 }
-
-.header_button {
-  margin-top: 35px;
-  border: 0 solid transparent;
-  border-radius: 2px;
-  background-color: $button-color;
-  padding: 12px 35px;
-  color: #fff;
-}
-
 .section {
   display: inline-block;
-  margin-top: -7%;
+  margin-top: -3%;
   position: relative;
   z-index: 1;
-
   &_text {
     text-align: center;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
+    color: $text-color;
+    margin: 10px auto;
   }
-
-  &_text::after {
+  &::before {
     @include underline;
-    bottom: 17px;
+    height: 20px;
     width: 11%;
-    left: 51%;
-    height: 15px;
+    top: 4%;
+    right: 38%;
   }
-
   &_card_wrap {
     display: flex;
     flex-flow: row nowrap;
@@ -114,7 +104,6 @@ p {
     justify-content: space-between;
     margin: 0 15%;
   }
-
   &_card {
     background-color: $background-gallery-footer;
     text-align: center;
@@ -122,44 +111,99 @@ p {
     margin-right: 3%;
     width: 35%;
     height: 300px;
-
+    position: relative;
+    z-index: 1;
     &_heading {
       color: #fff;
       font-size: 20px;
       padding: 0;
       line-height: 0;
-      font-weight: bold;
-      border-bottom: 3px solid $underline-color;
+      font-weight: 600;
     }
-
     &_text {
       color: #fff;
       font-size: 12px;
       padding: 0;
       line-height: 1.5;
     }
+    span {
+      @include underline;
+      width: 47%;
+      height: 12px;
+      top: 58%;
+      right: 75px;
+    }
   }
 }
-
+.section_card:nth-child(3) .section_card_underline {
+  width: 39%;
+  right: 85px;
+}
+.section_card:nth-child(1) .section_card_underline {
+  width: 55%;
+  right: 63px;
+}
 .section_banner {
   @include gradient;
-
+  position: relative;
+  z-index: 1;
   &_button {
     @extend .header_button;
     margin: 0 50px 0 0;
   }
-
   &_text_wrap {
     margin: 0 0 0 50px;
     line-height: 0.5;
   }
-
   &_heading {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 24px;
+    color: $text-color;
   }
-
   &_text {
-    color: darken($text-color, 20%);
+  color: map_get($map, color);
+    &::after {
+      @include underline;
+      height: 10px;
+      width: 8%;
+      top: 42%;
+      left: 22%;
+    }
+  }
+}
+.footer {
+  height: 200px;
+  background-color: $background-gallery-footer;
+  margin-top: -70px;
+  color: #fff;
+  &-wrap {
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin: 0 10%;
+    padding-top: 75px;
+  }
+  &_text {
+    width: 375px;
+    color: #fff;
+  }
+  &_logo {
+    p {
+      float: right;
+      margin: 5px 10px;
+      font-weight: 600;
+      width: 63px;
+      letter-spacing: 2px;
+      color: #fff;
+      span {
+        letter-spacing: normal;
+        font-size: 8px;
+        display: inline-block;
+        padding-left: 6px;
+      }
+    }
   }
 }
