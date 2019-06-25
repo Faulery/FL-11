@@ -113,6 +113,7 @@ body {
     height: 300px;
     position: relative;
     z-index: 1;
+    border-radius: 4px;
     &_heading {
       color: #fff;
       font-size: 20px;
@@ -147,6 +148,7 @@ body {
   @include gradient;
   position: relative;
   z-index: 1;
+  border-radius: 4px;
   &_button {
     @extend .header_button;
     margin: 0 50px 0 0;
