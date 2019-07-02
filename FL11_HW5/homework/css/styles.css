@@ -227,9 +227,9 @@ footer .owner {
         height: 50px;
         background-color: transparent;
         border-radius: 50%;
-        position: absolute;
-        top: 0;
-        right: 46%;
+        position: relative;
+        margin: 0 auto;
+        bottom: 75%;
     }
     .menu-btn span,
     .menu-btn span::before,
@@ -334,41 +334,6 @@ footer .owner {
 }
 
 @media screen and (max-width: 480px){
-    .menu-btn {
-        display: block;
-        width: 50px;
-        height: 50px;
-        background-color: transparent;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        right: 43%;
-    }
-    .menu-btn span,
-    .menu-btn span::before,
-    .menu-btn span::after {
-        position: absolute;
-        top: 50%;
-        margin-top: 1px;
-        left: 50%;
-        margin-left: -10px;
-        width: 20px;
-        height: 2px;
-        background-color: #fff;
-    }
-    .menu-btn span::before,
-    .menu-btn span::after {
-        content: '';
-    }
-    .menu-btn span::before {
-        transform: translateY(-6px);
-    }
-    .menu-btn span::after {
-        transform: translateY(2px);
-    }
-    .logo {
-        padding-top: 50px;
-    }
     header, span, footer, .main-content {
         margin: 0;
         padding: 0;
