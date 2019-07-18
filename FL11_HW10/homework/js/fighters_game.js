@@ -1,4 +1,4 @@
-class Fighter {
+class  Fighter {
   constructor(object) {
     this.name = object.name;
     this.damage = object.damage;
@@ -27,7 +27,7 @@ class Fighter {
       this.hp = this.totalHP;
     }
   }
-  static logCombatHistory (name, wins, losses) {
+  logCombatHistory (name, wins, losses) {
     return `Name: ${name}, Wins: ${wins}, Losses: ${losses}`;
   }
   addWin (point) {
@@ -40,13 +40,13 @@ class Fighter {
     let chance = Math.floor(Math.random() * this.chancePercent + 1);
     if (chance > defender.getAgility()) {
       let damageByHit = this.getDamage();
-      Fighter.dealDamage(damageByHit, defender);
+      this.dealDamage(damageByHit, defender);
       console.log(this.getName() + ' make ' + this.getDamage() + ' damage to ' + defender.getName());
     } else {
       console.log(this.getName() + ' attack missed');
     }
   }
-  static dealDamage(damageByHit, defender) {
+  dealDamage(damageByHit, defender) {
     defender.hp = defender.getHealth() - damageByHit;
   }
 }
@@ -67,12 +67,12 @@ let battle = (fighter1, fighter2) => {
       fighter1.addWin(1);
       fighter2.addLoss(1);
       console.log(fighter1.name + ' wins with ' + fighter1.hp + 'hp');
-      console.log(Fighter.logCombatHistory(fighter1.name, fighter1.wins, fighter1.loss));
+      console.log(fighter1.logCombatHistory(fighter1.name, fighter1.wins, fighter1.loss));
     } else {
       fighter1.addLoss(1);
       fighter2.addWin(1);
       console.log(fighter2.name + ' wins with ' + fighter2.hp + 'hp');
-      console.log(Fighter.logCombatHistory(fighter2.name, fighter2.wins, fighter2.loss));
+      console.log(fighter2.logCombatHistory(fighter2.name, fighter2.wins, fighter2.loss));
     }
   }
 };
