@@ -1,4 +1,4 @@
-class  Fighter {
+class Fighter {
   constructor(object) {
     this.name = object.name;
     this.damage = object.damage;
