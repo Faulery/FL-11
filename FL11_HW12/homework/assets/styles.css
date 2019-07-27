@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+div#root {
+  width: 30%;
+  min-height: 200px;
+  margin: 5% auto;
+}
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin: 5% 0;
+}
+ul {
+  list-style: none;
+  margin: 10px 0;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.empty_todo {
+  text-align: center;
+  display: none;
+}
+ul:empty + p {
+  display: block;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 60%;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+input {
+  width: 100%;
+  padding: 8px;
+}
+button {
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.checkbox_checked,
+.checkbox_empty,
+.todo_text,
+.remove_item {
+  width: 35px;
+  height: 35px;
+  border: 0;
+  margin: 0 1px;
+  background-color: white;
+}
+.todo_text {
+  flex: 1;
+  cursor: text;
+}
+.checkbox_empty {
+  background-image: url("./img/todo-s.png");
+}
+.checkbox_checked {
+  background-image: url("./img/done-s.png");
+}
+.checkbox_checked + .todo_text {
+  background: gray;
+}
+.remove_item {
+  background-image: url("./img/remove-s.jpg");
+}
