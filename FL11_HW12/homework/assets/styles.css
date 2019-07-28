@@ -52,8 +52,8 @@ button {
   padding: 5px;
   cursor: pointer;
 }
-.checkbox_checked,
-.checkbox_empty,
+.checked,
+.unchecked,
 .todo_text,
 .remove_item {
   width: 35px;
@@ -62,17 +62,29 @@ button {
   margin: 0 1px;
   background-color: white;
 }
+.alert {
+  width: 250px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.hide {
+  display: none;
+}
 .todo_text {
   flex: 1;
   cursor: text;
 }
-.checkbox_empty {
+.unchecked {
   background-image: url("./img/todo-s.png");
 }
-.checkbox_checked {
+.checked {
   background-image: url("./img/done-s.png");
 }
-.checkbox_checked + .todo_text {
+.checked + .todo_text {
   background: gray;
 }
 .remove_item {
