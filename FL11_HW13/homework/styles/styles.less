@@ -1,0 +1,40 @@
+@import "variables";
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+img {
+  max-width: 100%;
+}
+.heading {
+  color: @blue;
+  font-weight: bold;
+}
+.border--line {
+  border-bottom: 1px solid @blue;
+}
+.menu__logo {
+  height: 2rem;
+  margin: 0.5rem 2rem 0.5rem 1rem;
+}
+.nav {
+  &-item {
+    font-size: 1.2rem;
+  }
+  &-item:hover {
+    background-color: @blue;
+    transition: 0.3s;
+    color: @white;
+  }
+}
+.main {
+  &__text__description, &__text__list {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+footer {
+  background-color: @grey;
+  color: @white;
+}
