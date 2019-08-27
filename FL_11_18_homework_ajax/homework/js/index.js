@@ -4,16 +4,6 @@ showUsersBtn.addEventListener('click', () => {
   getUsers('https://jsonplaceholder.typicode.com/users');
 });
 
-function getUsers(url) {
-  loading();
-  fetch(url)
-    .then(response => response.json())
-    .then(users => {
-      main(users);
-      loaded();
-    })
-}
-
 function main(users) {
   const list = document.getElementById('users__list');
 
@@ -26,10 +16,20 @@ function main(users) {
 
     editBtn.addEventListener('click', (e) => {
       const item = e.target;
+      const form = document.createElement('form');
       let input = document.createElement('input');
       input.placeholder = 'Enter a new name';
+      input.type = 'text';
+      form.appendChild(input);
+      form.method = 'PUT';
       const list = item.parentNode;
-      list.appendChild(input);
+      const id = list.getAttribute('id');
+      list.appendChild(form);
+      form.onsubmit = (e) => {
+        const value = input.value;
+        changeUser(id, value);
+        e.preventDefault();
+      }
     });
 
     deleteBtn.addEventListener('click', (e) => {
@@ -69,6 +69,32 @@ function main(users) {
 
     list.appendChild(listItem);
   });
+}
+
+function getUsers(url) {
+  loading();
+  fetch(url)
+    .then(response => response.json())
+    .then(users => {
+      main(users);
+      loaded();
+    })
+}
+
+function changeUser(id, value) {
+  loading();
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      name: value,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+    .then(response => response.json())
+    .then(json => console.log(json));
+  loaded();
 }
 
 function getPosts(url, id) {
