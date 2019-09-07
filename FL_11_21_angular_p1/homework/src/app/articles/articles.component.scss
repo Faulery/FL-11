@@ -1,0 +1,27 @@
+.container {
+  width: 55%;
+  margin: 0 auto;
+}
+.article {
+  border: 1px solid black;
+  padding: 1% 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  img {
+    height: 90%;
+    width: 10%;
+  }
+  &-text {
+    width: 35%;
+    &-hiddenContent {
+      display: none;
+    }
+    button {
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+  }
+}

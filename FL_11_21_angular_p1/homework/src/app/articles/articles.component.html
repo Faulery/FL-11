@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="article" *ngFor = "let arr of ArticlesArr">
+    <img src="#" alt="Image">
+    <div class="article-text">
+        <h2> {{arr.title}} </h2>
+        <p> {{arr.shortDesc}} </p>
+        <div class="article-text-hiddenContent">
+          <p>arr.content</p>
+          <p>arr.author</p>
+        </div>
+        <button>Read more...</button>
+    </div>
+    <div class="article-date">
+        <p> {{arr.date}} </p>
+    </div>
+  </div>
+</div>
