@@ -13,8 +13,8 @@
         <input type="text" placeholder="Author" id="author">
         <input type="text" placeholder="Source URL" id="sourceURL">
         <div class="control-area">
-            <button type="submit">Save</button>
-            <button type="reset">Cancel</button>
+            <button type="submit" routerLink="/" (click) = "saveData($event)">Save</button>
+            <button type="reset" routerLink="/">Cancel</button>
         </div>
       </div>
     </form>

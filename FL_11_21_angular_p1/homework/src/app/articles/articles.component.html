@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="article" *ngFor = "let arr of ArticlesArr">
-    <img src="#" alt="Image">
+  <div class="article" *ngFor = "let arr of service.dataArr">
+    <img src="{{arr.urlToImage}}" alt="Image">
     <div class="article-text">
         <h2> {{arr.title}} </h2>
-        <p> {{arr.shortDesc}} </p>
+        <p> {{arr.description}} </p>
         <div class="article-text-hiddenContent">
           <p>arr.content</p>
           <p>arr.author</p>
@@ -11,7 +11,7 @@
         <button>Read more...</button>
     </div>
     <div class="article-date">
-        <p> {{arr.date}} </p>
+        <p> {{arr.publishedAt}} </p>
     </div>
   </div>
 </div>

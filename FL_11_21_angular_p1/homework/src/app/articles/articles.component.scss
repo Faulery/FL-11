@@ -10,8 +10,8 @@
   flex-direction: row;
   margin-bottom: 1rem;
   img {
-    height: 90%;
-    width: 10%;
+    height: 100%;
+    width: 45%;
   }
   &-text {
     width: 35%;
@@ -23,5 +23,8 @@
       background: transparent;
       outline: none;
     }
+  }
+  &-date {
+    width: 12%;
   }
 }
