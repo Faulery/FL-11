@@ -1,14 +1,30 @@
+<header class="header">
+  <h1>Source name</h1>
+  <nav class="header-navigation">
+    <select name="Select source">
+      <option value="Source 1">Source 1</option>
+      <option value="Source 2">Source 2</option>
+    </select>
+    <form>
+      <input type="text" placeholder="Type your text..." [(ngModel)] = "searchStr" name="search">
+      <button type="submit" (click)="sendValues()">Filter</button>
+    </form>
+    <button id="addArticle" routerLink="/createNews"
+    routerLinkActive="active">Add article</button>
+  </nav>
+</header>
+
 <div class="container">
-  <div class="article" *ngFor = "let arr of service.dataArr | search:searchStr">
+  <div *ngFor = "let arr of service.dataArr | search:searchStr; let i = index" class="article" id="{{i+1}}">
     <img src="{{arr.urlToImage}}" alt="Image">
     <div class="article-text">
         <h2> {{arr.title}} </h2>
         <p> {{arr.description}} </p>
         <div class="article-text-hiddenContent">
-          <p>{{arr.content}}</p>
+          <p>{{arr.author}}</p>
           <p>{{arr.content}}</p>
         </div>
-        <button>Read more...</button>
+        <button (click) = "showMore($event)">Read more...</button>
     </div>
     <div class="article-date">
         <p> {{arr.publishedAt}} </p>

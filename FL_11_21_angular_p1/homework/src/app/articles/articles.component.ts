@@ -19,4 +19,10 @@ export class ArticlesComponent implements OnInit {
     this.service.getData();
   }
 
+  showMore(event: any) {
+    const target = event.target;
+    let content = target.parentNode.children[2];
+    content.className = 'shown';
+  }
+
 }

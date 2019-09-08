@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
   transform(dataArr, value) {
-    return dataArr.filter(title => {
-      return title.title.includes(value);
+    return dataArr.filter(item => {
+      return item.title.includes(value);
     })
   }
 }

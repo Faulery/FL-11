@@ -1,3 +1,18 @@
+.header {
+  text-align: center;
+  background-color: rgb(240, 247, 242);
+  margin: 1.5rem;
+  padding: 1%;
+  &-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    select {
+      width: 10%;
+    }
+  }
+}
+
 .container {
   width: 55%;
   margin: 0 auto;
@@ -27,4 +42,7 @@
   &-date {
     width: 12%;
   }
+}
+.shown {
+  display: block;
 }

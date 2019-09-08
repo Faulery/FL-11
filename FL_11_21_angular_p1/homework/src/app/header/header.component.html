@@ -6,8 +6,8 @@
       <option value="Source 2">Source 2</option>
     </select>
     <form>
-      <input type="text" placeholder="Type your text..." [(ngModel)] = "searchStr" name="search">
-      <input type="submit" value="Filter">
+      <input type="text" placeholder="Type your text..." name="search" [(ngModel)]="str">
+      <button type="submit" (click)="sendValues()">Filter</button>
     </form>
     <button id="addArticle" routerLink="/createNews"
     routerLinkActive="active">Add article</button>
