@@ -20,7 +20,7 @@ export class DataService {
     })
   }
 
-  transformResponse(res: Object) {
+  transformResponse(res) {
     const result = [];
     if (res.hasOwnProperty('articles')) {
       result.push(res.articles);

@@ -8,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 
 export class CreateNewsComponent implements OnInit {
 
+  [x: string]: any;
+
   constructor() {
 
-   }
+  }
 
-   saveData(event) {
-    console.log('Dont worry, we got you data and saved it :)');
-   }
+   log(){
+    console.log(
+    `Title: ${this.title}
+    Description: ${this.description}
+    Content: ${this.content}
+    Date: ${this.date}
+    Author: ${this.author}
+    URL: ${this.url}`
+    );
+  }
 
   ngOnInit() {
 

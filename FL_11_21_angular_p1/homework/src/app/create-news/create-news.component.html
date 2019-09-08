@@ -4,16 +4,16 @@
 <div class="content">
     <form action="POST">
       <div class="content-left">
-        <input type="text" placeholder="Heading" id="heading">
-        <input type="text" placeholder="Short description" id="shortDesc">
-        <textarea id name="Content" cols="30" rows="10" id="content"></textarea>
+        <input type="text" placeholder="Heading" name="heading" [(ngModel)]="title">
+        <input type="text" placeholder="Short description" name="Short_description" [(ngModel)]="description">
+        <textarea name="content" cols="30" rows="10" [(ngModel)]="content"></textarea>
       </div>
       <div class="content-right">
-        <input type="text" placeholder="Date" id="date">
-        <input type="text" placeholder="Author" id="author">
-        <input type="text" placeholder="Source URL" id="sourceURL">
+        <input type="text" placeholder="Date" name="date" [(ngModel)]="date">
+        <input type="text" placeholder="Author" name="author" [(ngModel)]="author">
+        <input type="text" placeholder="Source URL" name="url" [(ngModel)]="url">
         <div class="control-area">
-            <button type="submit" routerLink="/" (click) = "saveData($event)">Save</button>
+            <button type="submit" routerLink="/" value="Save" (click)="log()">Save</button>
             <button type="reset" routerLink="/">Cancel</button>
         </div>
       </div>

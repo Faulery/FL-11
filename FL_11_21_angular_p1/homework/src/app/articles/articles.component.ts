@@ -9,6 +9,8 @@ import { DataService } from '../data.service';
 
 export class ArticlesComponent implements OnInit {
 
+  searchStr = '';
+
   constructor(private service: DataService) {
 
   }

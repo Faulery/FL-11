@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './articles/search.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ArticlesComponent,
     MainComponent,
-    routingComponents
+    routingComponents,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
