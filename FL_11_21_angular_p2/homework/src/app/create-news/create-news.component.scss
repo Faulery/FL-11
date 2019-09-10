@@ -1,0 +1,36 @@
+.header {
+  text-align: center;
+  background-color: rgb(240, 247, 242);
+  margin: 1.5rem;
+  padding: 1%;
+}
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.content {
+  width: 55%;
+  margin: 0 auto;
+  .content-left, .content-right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 45%;
+  }
+  .control-area {
+    margin-left: 59%;
+    button {
+      margin-left: 5%;
+      width: 60px;
+      height: 35px;
+    }
+  }
+}
+input {
+  height: 10%;
+  font-size: 18px;
+}
+textarea {
+  max-height: 30%;
+}

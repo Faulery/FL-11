@@ -1,0 +1,22 @@
+<header class="header">
+    <h1>Create news</h1>
+</header>
+<div class="content">
+  <form (ngSubmit) = "onSubmit()">
+    <div class="content-left">
+      <input type="text" placeholder="Heading" name="heading" id="heading" required [(ngModel)]="title">
+      <input type="text" placeholder="Short description" name="description" id="description" required [(ngModel)]="description">
+      <textarea name="content" cols="30" rows="10" id="content" required [(ngModel)]="content"></textarea>
+    </div>
+    <div class="content-right">
+      <input type="date" placeholder="Date" name="date" id="date" required [(ngModel)]="date">
+      <input type="text" placeholder="Author" name="author" id="author" required [(ngModel)]="author">
+      <input type="text" placeholder="Source URL" name="url" id="url" required [(ngModel)]="url">
+      <input type="url" placeholder="URL to Image" name="urlToImage" id="urlToImage" required [(ngModel)]="urlToImage">
+      <div class="control-area">
+        <button type="submit">Save</button>
+        <button type="button" routerLink="/">Cancel</button>
+      </div>
+    </div>
+  </form>
+  </div>
