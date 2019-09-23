@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$turqoise: #26a69a;
+$red: #E57373;
+$gray: #D3D3D3;
+$white: #fff;
+
+$shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+.root {
+    font-family: 'Open Sans', sans-serif;
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .search-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1rem;
+        border-bottom: 2px solid $gray;
+
+        &-label {
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        &-input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .users-table {
+        width: 90%;
+        margin: 1rem auto;
+        border-collapse: collapse;
+
+        &-header {
+            color: $white;
+            background-color: $turqoise;
+
+            &-dummy-block {
+                height: 5px;
+            }
+
+            th {
+                padding: 12px;
+                font-weight: 400;
+            }
+        }
+
+        &-data {
+            text-align: center;
+            font-weight: 600;
+
+            &-remove-btn {
+                color: $white;
+                background-color: $red;
+                outline: none;
+                border: none;
+                padding: 5px;
+                box-shadow: $shadow;
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .load {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem;
+        border-top: 2px solid $gray;
+        font-weight: 600;
+
+        &-button {
+            box-shadow: $shadow;
+            border: none;
+            outline: none;
+            padding: 10px 250px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: $white;
+            border-radius: 25px;
+            font-weight: 600;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .alert {
+        color: $red;
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+}
+
